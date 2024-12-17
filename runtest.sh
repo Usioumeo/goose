@@ -1,0 +1,1 @@
+cargo run --release -- --host http://umami.ddev.site --report-file=report.html --no-reset-metrics

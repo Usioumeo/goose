@@ -1,0 +1,12 @@
+[package]
+name = "goose"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+goose = "^0.17"
+tokio = "^1.42"
+goose-eggs = "0.5"
+
+#openssl = { version = "0.10.65", features = ["vendored"] }
+openssl-sys = { version = "=0.9.103", features = ["vendored"] }
