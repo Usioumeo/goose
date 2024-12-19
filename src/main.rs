@@ -12,6 +12,12 @@ async fn loadtest_index(user: &mut GooseUser) -> TransactionResult {
     validate_and_load_static_assets(user, goose, &validate).await?;
     Ok(())
 }
+async fn test_update_food(user: &mut GooseUser)->TransactionResult{
+    let params = [("type", "Non-Veg"), ("foodName", "Chicken+Biryani"), ("foodCost", "9")];
+    let _goose = user.post_form("/UpdateFood1", &params).await?;
+
+    Ok(())
+}
 
 
 
@@ -19,7 +25,7 @@ async fn loadtest_index(user: &mut GooseUser) -> TransactionResult {
 async fn main() -> Result<(), GooseError> {
     GooseAttack::initialize()?
         .register_scenario(scenario!("LoadtestTransactions")
-            .register_transaction(transaction!(loadtest_index))
+            .register_transaction(transaction!(test_update_food))
         )
         .execute()
         .await?;

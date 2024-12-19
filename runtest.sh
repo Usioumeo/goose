@@ -1,1 +1,1 @@
-cargo run --release -- --host http://umami.ddev.site --report-file=report.html --no-reset-metrics
+cargo run  -- -u 60 -s 30s -t 30s --host http://localhost/Tourism --report-file=report.html --no-reset-metrics
